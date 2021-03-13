@@ -1,0 +1,64 @@
+using System;
+
+namespace cajero_automaticon_v0._1
+{
+    class Program
+    {
+ 
+        static void Main(string[] args)
+        {
+
+            char r1;
+            int a = 0;
+            
+            
+            do {
+                int res;
+                char r;
+
+                Console.WriteLine("Hola tu saldo es de {0}, precione  lo que necesitas hacer", a);
+                Console.WriteLine("D =Depsito");
+                Console.WriteLine("R =Retiro");
+                r = char.Parse(Console.ReadLine());
+
+                if (r == 'd' || r == 'D' || r == 'r' || r == 'R')
+                {
+                    if (r == 'd' || r == 'D')
+                    {
+
+                        Console.WriteLine("Usted escojio Deposito cuanto desea Despositar");
+                        res = int.Parse(Console.ReadLine());
+
+                        a = a + res;
+
+
+                    }
+                    if (r == 'r' || r == 'R')
+                    {
+
+                        Console.WriteLine("Usted escojio Retirar  cuanto desea Retirar");
+                        res = int.Parse(Console.ReadLine());
+                        a = a - res;
+
+                    }
+                    else
+                    {
+                        Console.WriteLine("el valor es insuficiente");
+                    }
+
+                }
+                else
+                {
+                    Console.WriteLine("este valor no esta permitido");
+
+                }
+                Console.WriteLine("Tu  saldo es de: "+a);
+                Console.WriteLine("Deseas salir s/n");
+                r1=char.Parse(Console.ReadLine());
+           
+            } while (r1 !='s' && r1!='S');
+            Console.Read();
+
+        }
+    }
+}
